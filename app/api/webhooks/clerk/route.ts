@@ -59,8 +59,9 @@ export async function POST(req: Request) {
 
   // CREATE
   if (eventType === "user.created") {
+    //get these data from the user that is created and store it in evt.data
     const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
-
+  //now extract all of that data and set it to a new user object
     const user = {
       clerkId: id,
       email: email_addresses[0].email_address,
@@ -69,7 +70,8 @@ export async function POST(req: Request) {
       lastName: last_name,
       photo: image_url,
     };
-
+ //after this we call createUser server action that we have already coded
+ //that takes in all of this data and create a new user based on that data
     const newUser = await createUser(user);
 
     // Set public metadata
