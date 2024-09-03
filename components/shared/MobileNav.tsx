@@ -17,7 +17,7 @@ const MobileNav = () => {
     <header className="header">
    <Link href="/" className="flex items-center gap-2 md:py-2">
    <Image
-   src="/assets/images/Logo.png"
+   src="/assets/images/Logo.jpg"
    alt="logo"
    width={180}
    height={28}
